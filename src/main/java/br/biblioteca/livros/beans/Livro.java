@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Livro {
@@ -16,12 +19,16 @@ public class Livro {
 	@GeneratedValue
 	private Long id;
 
+	@NotNull(message = "Titulo cannot be empty")
+	@Size(min = 2, max = 100, message = "O tamanho deve ser entre 2 a 100 caracteres")
 	@Column(name = "titulo", nullable = true)
 	private String titulo;
 
 	@Column(name = "foto", nullable = true)
 	private String foto;
 
+	@NotNull(message = "Quantidade cannot be empty")
+	@Min(value = 10, message = "valor mínimo é 10 páginas")
 	@Column(name = "quantidade")
 	private Integer quantidade;
 
@@ -33,6 +40,16 @@ public class Livro {
 
 	@OneToMany(mappedBy = "livroId")
 	private List<Review> reviews = new ArrayList<>();
+
+	private String capa;
+
+	public String getCapa() {
+		return capa;
+	}
+
+	public void setCapa(String capa) {
+		this.capa = capa;
+	}
 
 	public Long getId() {
 		return id;

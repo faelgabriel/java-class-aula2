@@ -1,8 +1,8 @@
 INSERT INTO Autor (id, nome) VALUES(1, 'Rafael F');
 INSERT INTO Autor (id, nome) VALUES(2, 'Fernando R');
 
-INSERT INTO Livro (id, titulo, foto, quantidade, autor_id_id) VALUES(1, 'O Livro do Titulo', null, 1, 1);
-INSERT INTO Livro (id, titulo, foto, quantidade, autor_id_id) VALUES(2, 'Titulo do Livro', null, 1, 2);
+INSERT INTO Livro (id, titulo, foto, quantidade, autor_id_id) VALUES(1, 'O Livro do Titulo', null, 10, 1);
+INSERT INTO Livro (id, titulo, foto, quantidade, autor_id_id) VALUES(2, 'Titulo do Livro', null, 10, 2);
 
 INSERT INTO Usuario (id, username, email, password) VALUES(1, 'user', 'user@user.com', '123456');
 
